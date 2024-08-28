@@ -3,20 +3,21 @@
 require_once 'Contatos.php';
 //Incluindo o arquivo GerencDeContatos.php, que deve definir a classe GerencDeContos.
 require_once 'Gerenciador_De_Contatos.php';
-$gerencDeContatos = new GerenciadorDeContatos();
+$gerenciadorDeContatos = new GerenciadorDeContatos();
 /* verificar se o método de requisição é POST */
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     if (isset($_POST['nome'], $_POST['email'], $_POST['telefone'])) {
         /* Vai adiciona um novo contato usando informações fornecidas */
-        $gerencDeContatos->adicionarContato($_POST['nome'], $_POST['email'], $_POST['telefone']);
+        $gerenciadorDeContatos->adicionarContato($_POST['nome'], $_POST['email'], $_POST['telefone']);
     }
     /* Verifica se o campo "deletar" está presente na requisição POST. */
     if (isset($_POST['deletar'])) {
         /* Deleta os Contatos */
-        $gerencDeContatos->deletarContato($_POST['deletar']);
+        $gerenciadorDeContatos->deletarContato($_POST['deletar']);
     }
 }
+$contatos = $gerenciadorDeContatos->getContatos();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -45,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         </form>
     </div>
     <ul>
-        <?php foreach ($contatos as $indice => $contato): ?>
+        <?php foreach($contatos as $indice => $contato): ?>
         <li>
             <strong>Nome:</strong> <?= htmlspecialchars($contato->getNome()) ?><br>
             <strong>Email:</strong> <?= htmlspecialchars($contato->getEmail()) ?><br>

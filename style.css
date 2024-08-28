@@ -3,7 +3,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #797676;
+    background-color: #3b3838;
 }
 
 
@@ -13,7 +13,7 @@ h1 {
     text-align: center;
     color: #333333;
     padding: 20px 0;
-    background-color: #8de2f1;
+    background-color: #8f8df1;
     border-bottom: 2px solid #ddd;
     margin: 0;
     box-shadow: 0 0 85px #ddd;
@@ -23,11 +23,11 @@ h1 {
 /* Estiliza o formulário */
 
 .formulario {
-    max-width: 600px;
+    max-width: 300px;
     margin: 70px auto;
     padding: 20px;
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid rgb(221, 221, 221);
     border-radius: 8px;
 }
 
@@ -42,7 +42,8 @@ form input[type="email"] {
 }
 
 form button {
-    width: 100%;
+    margin: 50px;
+    width: 60%;
     padding: 10px;
     background-color: #5cb87f;
     color: #fff;
